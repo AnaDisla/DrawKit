@@ -23,6 +23,21 @@ canvas.addEventListener('mouseup', () =>{
     
 });
 const colorPicker = document.getElementById('colorPicker');
+const borrador = document.getElementById('borrador');
+
+borrador.addEventListener("click", () => {
+    modo = "borrador";
+
+});
+
+const lapiz = document.getElementById('lapiz');
+let modo = "lapiz";
+
+lapiz.addEventListener("click", () =>{
+     modo = "lapiz"; 
+    return;
+
+});
 
 canvas.addEventListener('mousemove', (e) =>{
     console.log("dibujando");
@@ -34,8 +49,14 @@ canvas.addEventListener('mousemove', (e) =>{
         ctx.moveTo(ultimox, ultimoy);
         ctx.lineTo(pos.x, pos.y);
         ctx.lineWidth= 3;
-        ctx.strokeStyle = colorPicker.value;
-        ctx.stroke();
+
+        if (modo == "lapiz") {
+            ctx.strokeStyle = colorPicker.value;
+            ctx.stroke();
+        }else{
+            ctx.clearRect(pos.x - 2.5, pos.y - 2.5, 5, 5);
+        };
+        
         
 
         ultimox=pos.x;
@@ -67,4 +88,3 @@ botonGuardar.addEventListener("click", () => {
 
     enlace.click();
 });
-
