@@ -68,11 +68,11 @@ canvas.addEventListener('mousemove', (e) =>{
     
 );
 
-function obtenerPosicion(e) {
+function obtenerPosicion(e){
     const rect = canvas.getBoundingClientRect();
-    return {
-        x: (e.clientX - rect.left) * (canvas.width / rect.width),
-        y: (e.clientY - rect.top) * (canvas.height / rect.height)
+    return{
+        x: e.clientX  - rect.left,
+        y: e.clientY - rect.top
     };
 }
 
@@ -90,4 +90,10 @@ botonGuardar.addEventListener("click", () => {
     enlace.download = "mi dibujo.png";
 
     enlace.click();
+});
+
+const wipe = document.getElementById('wipe');
+
+wipe.addEventListener("click", () =>{
+    ctx.reset();
 });
