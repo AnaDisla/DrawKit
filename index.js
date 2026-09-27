@@ -1,4 +1,5 @@
 const canvas = document.getElementById('pizarra');
+
 const ctx = canvas.getContext('2d');
 
 //Variable bandera para saber si se tiene que dibujar o no
@@ -21,6 +22,7 @@ canvas.addEventListener('mouseup', () =>{
 
     
 });
+const colorPicker = document.getElementById('colorPicker');
 
 canvas.addEventListener('mousemove', (e) =>{
     console.log("dibujando");
@@ -32,6 +34,7 @@ canvas.addEventListener('mousemove', (e) =>{
         ctx.moveTo(ultimox, ultimoy);
         ctx.lineTo(pos.x, pos.y);
         ctx.lineWidth= 3;
+        ctx.strokeStyle = colorPicker.value;
         ctx.stroke();
         
 
@@ -64,3 +67,4 @@ botonGuardar.addEventListener("click", () => {
 
     enlace.click();
 });
+
