@@ -23,6 +23,7 @@ canvas.addEventListener('mouseup', () =>{
     
 });
 const colorPicker = document.getElementById('colorPicker');
+const grosor = document.getElementById('grosor');
 const borrador = document.getElementById('borrador');
 
 borrador.addEventListener("click", () => {
@@ -48,15 +49,17 @@ canvas.addEventListener('mousemove', (e) =>{
         ctx.beginPath();
         ctx.moveTo(ultimox, ultimoy);
         ctx.lineTo(pos.x, pos.y);
-        ctx.lineWidth= 3;
+        ctx.lineWidth = grosor.value;
 
         if (modo == "lapiz") {
+            ctx.globalCompositeOperation = 'source-over';
             ctx.strokeStyle = colorPicker.value;
-            ctx.stroke();
+            
         }else{
-            ctx.clearRect(pos.x - 2.5, pos.y - 2.5, 5, 5);
+            ctx.globalCompositeOperation = 'destination-out';
+            //ctx.clearRect(pos.x - 2.5, pos.y - 2.5, 5, 5);
         };
-        
+        ctx.stroke();
         
 
         ultimox=pos.x;
