@@ -68,11 +68,11 @@ canvas.addEventListener('mousemove', (e) =>{
     
 );
 
-function obtenerPosicion(e){
+function obtenerPosicion(e) {
     const rect = canvas.getBoundingClientRect();
-    return{
-        x: e.clientX  - rect.left,
-        y: e.clientY - rect.top
+    return {
+        x: (e.clientX - rect.left) * (canvas.width / rect.width),
+        y: (e.clientY - rect.top) * (canvas.height / rect.height)
     };
 }
 
