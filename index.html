@@ -17,7 +17,7 @@
 
             <div class="options">
                 <button id="wipe">Wipe</button>
-                <button id="guardar">Save</button>
+                <button id="trySave">Save</button>
             </div>
 
             <div class="tools">
@@ -36,12 +36,26 @@
             
         </div>
         <div class="canva">
-             <canvas id="pizarra" height="600" width="1000"></canvas>
+             <canvas id="pizarra" height="600" width="1000" ></canvas>
         </div>
         <div class="rights">
             <span class="copy">
                 Copyright by AnnieStudios.
             </span>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="imageContent">
+                <h1>Wait!</h1>
+                <p>Before you save your drawing you have to give it a name.</p>
+                <form action="" id="formName">
+                    <input type="text" name="imageName" id="imageName" placeholder="Name your drawing." required>
+                    <button type="submit" id="guardar">Save</button>
+                </form>
+                
+            </div>
+            
+
         </div>
        
     </div>

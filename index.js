@@ -79,7 +79,36 @@ function obtenerPosicion(e){
 }
 
 const botonGuardar = document.getElementById("guardar");
+const intentoGuardado = document.getElementById('trySave');
+const contenedorImagen = document.getElementById('overlay');
+const formNombre = document.getElementById('formName');
 
+intentoGuardado.addEventListener("click", () =>{
+    contenedorImagen.style.display="flex";
+
+})
+
+formNombre.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const datos = new FormData(formNombre);
+    const nombreImagen =(datos.get("imageName"));
+
+    //Primero tenemos que convertir el contenido del Canvas en una imagen
+    const imagen = canvas.toDataURL("image/png");
+    //Creamos un "a" y lo almacenamos en esta variable para luego referenciar nuestra imagen.
+    const enlace = document.createElement("a");
+
+    enlace.href = imagen;
+
+    //Instrucción de descarga y asignación de nombre.
+    enlace.download = nombreImagen;
+
+    enlace.click();
+    
+    contenedorImagen.style.display="none";
+});
+
+/*
 botonGuardar.addEventListener("click", () => {
     //Primero tenemos que convertir el contenido del Canvas en una imagen
     const imagen = canvas.toDataURL("image/png");
@@ -89,11 +118,11 @@ botonGuardar.addEventListener("click", () => {
     enlace.href = imagen;
 
     //Instrucción de descarga y asignación de nombre.
-    enlace.download = "mi dibujo.png";
+    enlace.download = nombreImagen;
 
     enlace.click();
 });
-
+*/
 const wipe = document.getElementById('wipe');
 
 wipe.addEventListener("click", () =>{
