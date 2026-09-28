@@ -47,7 +47,7 @@ button {
     border-radius: 8px;
     background: #f7f9f8;
     padding: 0 15px;
-    color: #24312d;
+    color: #283124;
     cursor: pointer;
     transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
 }
@@ -68,14 +68,14 @@ input:focus-visible {
 }
 
 #guardar {
-    border-color: #246b57;
-    background: #246b57;
+    border-color: #1b25ec;
+    background: #1b25ec;
     color: #fff;
 }
 
 #guardar:hover {
-    border-color: #195642;
-    background: #195642;
+    border-color: #121aaf;
+    background: #121aaf;
 }
 
 .tools button {
@@ -93,7 +93,7 @@ input:focus-visible {
 
 #grosor {
     width: 110px;
-    accent-color: #246b57;
+    accent-color: #1b25ec;
     cursor: pointer;
 }
 
@@ -120,6 +120,16 @@ input:focus-visible {
     border: none;
     background-color: transparent;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 40px;
 
+}
+
+.rights {
+    position: fixed;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    z-index: 2;
+    color: #53635c;
+    font-size: 12px;
+    pointer-events: none;
 }
