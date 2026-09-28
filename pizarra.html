@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawKit</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=draw,ink_eraser">
+    <link rel="stylesheet" href="pizarra.css">
+</head>
+<body>
+    <div class="whole">
+        
+        <h1></h1>
+        <div class="navbar">
+
+            <div class="options">
+                <button id="wipe">Wipe</button>
+                <button id="trySave">Save</button>
+            </div>
+
+            <div class="tools">
+                
+                
+                <button id="lapiz">
+                    <span class="material-symbols-outlined">draw</span>
+                </button>
+                <button id="borrador">
+                    <span class="material-symbols-outlined">ink_eraser</span>
+                    </button>
+                <input type="range" id="grosor" max="50" min="1" value="4">
+                <span id="mostrarGrosor">4px</span>
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+            
+        </div>
+        <div class="canva">
+             <canvas id="pizarra" height="600" width="1000" ></canvas>
+        </div>
+        <div class="rights">
+            <span class="copy">
+                Copyright by AnnieStudios.
+            </span>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="imageContent">
+                <h1>Wait!</h1>
+                <p>Before you save your drawing you have to give it a name.</p>
+                <form action="" id="formName">
+                    <input type="text" name="imageName" id="imageName" placeholder="Name your drawing." required>
+                    <button type="submit" id="guardar">Save</button>
+                </form>
+                
+            </div>
+            
+
+        </div>
+       
+    </div>
+    
+    <script src="pizarra.js"></script>
+</body>
+</html>
