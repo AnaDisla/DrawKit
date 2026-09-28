@@ -50,6 +50,8 @@ canvas.addEventListener('mousemove', (e) =>{
         ctx.moveTo(ultimox, ultimoy);
         ctx.lineTo(pos.x, pos.y);
         ctx.lineWidth = grosor.value;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
 
         if (modo == "lapiz") {
             ctx.globalCompositeOperation = 'source-over';
